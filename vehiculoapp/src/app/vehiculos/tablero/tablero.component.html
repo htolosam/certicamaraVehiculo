@@ -1,0 +1,114 @@
+<!-- <div class="col-md-12"> -->
+
+<div class="row">
+
+  <!-- <div class="col-md-12"> -->
+
+<div class="col-md-6">
+    <div class="card text-white bg-secondary " >
+      <div class="card-header">Configuracion superficie</div>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Secondary card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <form name="formsuperficie" (ngSubmit) = "create()" >
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="fila">Filas</label>
+              <input type="number" class="form-control" [(ngModel)]="sup.fila" id="fila" name="fila" placeholder="Filas" value="{{fila}}">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="columna">Columnas</label>
+              <input type="number" class="form-control" [(ngModel)]="sup.columna" id="columna" name="columna" placeholder="Columnas" value="{{columna}}">
+            </div>
+          <!-- </div>
+
+          <div class="form-row"> -->
+            <div class="form-group col-md-4">
+              <label for="columna">&nbsp;</label>
+              <button class="btn btn-primary btn-block">Configurar</button>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <button type="button" class="btn btn-default btn-block" disabled>
+              Filas <span class="badge badge-light">{{ filaRev }}</span>
+              <span class="sr-only">unread messages</span>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-default btn-block" disabled>
+              Columnas <span class="badge badge-light">{{ columnaRev }}</span>
+              <span class="sr-only">unread messages</span>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" (click)="revisarConfiguracion()" class="btn btn-primary btn-block">Revisar superficie</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="card text-white bg-secondary" >
+      <div class="card-header">Puesta en marcha - comandos</div>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Secondary card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <form name="formcomandos" (ngSubmit) = "createComando()" >
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="fila">Comandos</label>
+              <input type="text" class="form-control"  id="comando" [(ngModel)]="com.comando" name="comando" placeholder="Comandos" value="">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="fila">&nbsp;</label>
+              <button class="btn btn-primary btn-block">Ingresar comando</button>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fila">&nbsp;</label>
+              <button type="button" (click)="deleteComandos()" class="btn btn-primary btn-block">Reiniciar posicion</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <button type="button" class="btn btn-default btn-block" disabled>
+              Filas <span class="badge badge-light">{{ filaPos }}</span>
+              <span class="sr-only">unread messages</span>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-default btn-block" disabled>
+              Columnas <span class="badge badge-light">{{ columnaPos }}</span>
+              <span class="sr-only">unread messages</span>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" (click)="revisarPosicion()" class="btn btn-primary btn-block">Revisar posicion</button>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+  <!-- </div> -->
+</div>
