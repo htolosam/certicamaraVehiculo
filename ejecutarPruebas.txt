@@ -1,0 +1,10 @@
+DEtalle de ejecucion de pruebas de los aplicativos
+
+Se tiene un ejecutable que es un jar encargado de la exposicion de los servicios web
+La base de datos esta en la nube asi como el aplicativo de angular que interactua con
+los servicios web que se exponen en el ejecutable.
+Se deben realizar los pasos en el siguiente orden:
+
+1- Verificar conexion a internet.
+2- Ejecutar el archivo .bat (En windows) que se encuentra en la carpeta ejecutables\vehiculoRest\ejecutar.bat (se ejecuta en el puerto 8092)
+3- Una vez iniciado el servicio, dirijase a http://vehiculo.hotolosa.com para realizar las pruebas
