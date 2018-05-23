@@ -7,6 +7,12 @@ import com.tolosa.certicamara.vehiculo.apirest.models.dao.IComandoDao;
 import com.tolosa.certicamara.vehiculo.apirest.models.entity.Comando;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
 
+/**
+ * Clase que hace las veces de servicio para conectarse con la capa 
+ * de accesp a datos y al controller
+ * @author ho chi
+ *
+ */
 @Service
 public class ComandoServiceImpl implements IComandoService {
 

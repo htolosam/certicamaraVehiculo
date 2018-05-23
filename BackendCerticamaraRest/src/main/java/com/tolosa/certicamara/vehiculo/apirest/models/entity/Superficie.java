@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Clase entidad de superficie
- * @author desarrollo1
+ * @author ho chi
  *
  */
 @Document(collection="superficies")

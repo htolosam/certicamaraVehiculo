@@ -5,6 +5,11 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Clase entidad de la coleccion comandos
+ * @author ho chi
+ *
+ */
 @Document(collection="comandos")
 public class Comando implements Serializable {
 	/**

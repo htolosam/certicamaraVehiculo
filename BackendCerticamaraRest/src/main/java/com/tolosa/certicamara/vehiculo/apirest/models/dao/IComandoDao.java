@@ -3,14 +3,14 @@ package com.tolosa.certicamara.vehiculo.apirest.models.dao;
 import com.tolosa.certicamara.vehiculo.apirest.models.entity.Comando;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
 
+/**
+ * Interface 
+ * @author ho chi
+ *
+ */
 public interface IComandoDao {
 	
-//	/**
-//	 * Metodo para crear comando por defecto
-//	 * @return
-//	 */
-//	public Comando crearPrimerComando();
-	
+
 	/**
 	 * Metodo para guardar uno o varios comandos
 	 * @param comando Objeto comando con los datos a guardar

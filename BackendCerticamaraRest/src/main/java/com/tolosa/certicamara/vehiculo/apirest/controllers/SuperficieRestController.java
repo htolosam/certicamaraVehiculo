@@ -20,7 +20,11 @@ import com.tolosa.certicamara.vehiculo.apirest.models.entity.Superficie;
 import com.tolosa.certicamara.vehiculo.apirest.models.services.ISuperficieService;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
 
-
+/**
+ * Clase encargada de exponer los sevicios web para consumo de
+ * la superficie por parte de un cliente
+ * @author ho chi 
+ */
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("/api")

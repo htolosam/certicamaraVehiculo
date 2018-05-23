@@ -15,6 +15,11 @@ import com.tolosa.certicamara.vehiculo.apirest.models.entity.Comando;
 import com.tolosa.certicamara.vehiculo.apirest.models.services.IComandoService;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
 
+/**
+ * Clase encargada de exponer los sevicios web para consumo de los comandos
+ * por parte de un cliente
+ * @author ho chi *
+ */
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/com")

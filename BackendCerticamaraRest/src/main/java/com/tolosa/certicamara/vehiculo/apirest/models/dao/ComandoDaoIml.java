@@ -12,11 +12,15 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import com.tolosa.certicamara.vehiculo.apirest.models.entity.Comando;
-import com.tolosa.certicamara.vehiculo.apirest.models.entity.Superficie;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.UtilidadesComandos;
 import com.tolosa.certicamara.vehiculo.apirest.utilidades.UtilidadesDesplazamiento;
 
+/**
+ * clase encar
+ * @author ho chi
+ *
+ */
 @Repository
 public class ComandoDaoIml implements IComandoDao {
 
@@ -30,7 +34,6 @@ private MongoOperations mope;
 	@Autowired
 	private ISuperficieDao superficieDao;
 	
-//	@Autowired(required=false)
     public ComandoDaoIml(ISuperficieDao superficieDao){
     	
         this.superficieDao = superficieDao;
@@ -60,11 +63,13 @@ private MongoOperations mope;
 				res.setSuccess(estado);
 				res.setMensaje(environment.getProperty("mensaje.error.validar.formato.comando"));
 			}
+			//obtenemos el ultimo comando que se guardo con exito y que sera nuestro punto de partida
 			Comando ultimoComando = this.getUltimoComando();
 			if(ultimoComando.isAvance()) {
 				res.setSuccess(estado);
 				res.setMensaje(environment.getProperty("mensaje.error.validar.avance.superficie"));
 			}
+			//obtenemos la lista de comandos cion sus respectivas posiciones para guardar en la bd
 			List<Comando> listaComandos = UtilidadesDesplazamiento.getDesplazamientoComando(comandos, superficieDao.show("1"), this.getUltimoComando());
 			for (Comando cmd : listaComandos) {
 
@@ -72,6 +77,8 @@ private MongoOperations mope;
 				res = this.show(cmd.getId());
 				estado = true;
 				res.setSuccess(estado);
+				//si la variable avance es verdadera se actualiza en el comando actual para que no se pueda
+				//seguir con el ingreso de mas comandos para desplazarse
 				if(cmd.isAvance()) {
 					res.setSuccess(estado);
 					res.setMensaje(environment.getProperty("mensaje.error.validar.avance.superficie"));
@@ -123,7 +130,10 @@ private MongoOperations mope;
 		return res;
 	}
 	
-	
+	/**
+	 * Metodo para obtener el ultimo comando que se guardo con exito
+	 * @return
+	 */
 	private Comando getUltimoComando() {
 		Query query = new Query();
 	    query.limit(1);
