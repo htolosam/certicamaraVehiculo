@@ -27,6 +27,11 @@ public class ComandoRestController {
 	@Autowired
 	private IComandoService comandoService;
 	
+	@GetMapping("/comando/listar")
+	public Respuesta index() {
+		return comandoService.listar();
+	}
+	
 	@PostMapping("/comando")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Respuesta create(@RequestBody Comando comando) {

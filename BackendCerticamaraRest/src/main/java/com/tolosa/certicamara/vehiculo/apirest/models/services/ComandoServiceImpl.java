@@ -46,6 +46,12 @@ public class ComandoServiceImpl implements IComandoService {
 		return comandoDao.getPosicionVehiculo();
 	}
 
+	@Override
+	public Respuesta listar() {
+		// TODO Auto-generated method stub
+		return comandoDao.listar();
+	}
+
 
 
 }

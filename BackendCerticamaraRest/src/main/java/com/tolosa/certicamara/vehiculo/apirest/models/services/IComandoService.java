@@ -8,6 +8,13 @@ import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
  *
  */
 public interface IComandoService {
+	
+	/**
+	 * Listar comandos
+	 * @return
+	 */
+	public Respuesta listar();
+	
 	/**
 	 * Metodo para guardar uno o varios comandos
 	 * @param comando Objeto comando con los datos a guardar

@@ -155,4 +155,14 @@ private MongoOperations mope;
 		return cmd;
 	}
 
+	@Override
+	public Respuesta listar() {
+		List<Comando> cmd = this.mope.find(new Query(), Comando.class);
+		Respuesta res = new Respuesta();
+		res.setEntidad(cmd);
+		res.setSuccess(true);
+		res.setMensaje(environment.getProperty("mensaje.success"));
+		return res;
+	}
+
 }

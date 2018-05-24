@@ -10,6 +10,11 @@ import com.tolosa.certicamara.vehiculo.apirest.utilidades.Respuesta;
  */
 public interface IComandoDao {
 	
+	/**
+	 * Listar comandos
+	 * @return
+	 */
+	public Respuesta listar();
 
 	/**
 	 * Metodo para guardar uno o varios comandos

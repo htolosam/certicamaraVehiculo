@@ -10,6 +10,8 @@ public class Respuesta {
 	private int fila;
 	private int columna;
 	
+	private Object entidad; 
+	
 	@Value("${mensaje.error.sin.mensaje}")
 	private static String MENSAJEERROR; 
 	
@@ -47,15 +49,28 @@ public class Respuesta {
 		this.success = success;
 	}
 
+	public Object getEntidad() {
+		return entidad;
+	}
+
+	public void setEntidad(Object entidad) {
+		this.entidad = entidad;
+	}
+
 	public JSONObject getRespuesta() {
 		return respuesta;
 	}
+	
+	
 
 	public void setRespuesta(JSONObject respuesta) throws JSONException {
 		if(this.getFila()>=1) 
 			respuesta.put("fila", this.getFila());
 		if(this.getColumna()>=1) 
 			respuesta.put("columna", this.getColumna());
+		
+		if(this.getEntidad() == null)
+			respuesta.put("listado", this.getEntidad());
 		
 		respuesta.put("success", this.isSuccess());
 		
